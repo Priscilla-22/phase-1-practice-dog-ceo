@@ -6,7 +6,7 @@ function fetchAndDisplayImages() {
   const imageContainer = document.getElementById('dog-image-container');
 
   fetch(imgUrl)
-    .then((response) => response.json()) //converts resp to JSON
+    .then((response) => response.json())
     .then((data) => {
       const dogImages = data.message;
       dogImages.forEach((imgUrl) => {
@@ -36,7 +36,6 @@ function fetchAndDisplayBreeds() {
         listItem.textContent = breed;
         breedList.appendChild(listItem);
 
-        //changes the font color of the listItems to blue
         listItem.addEventListener('click', function () {
           listItem.style.color = 'blue';
         });
@@ -79,6 +78,7 @@ function filterBreeds() {
     .catch((error) => {
       console.error('Error fetching breeds:', error);
     });
+  breedList.style.display = 'list-item';
 }
 
 document.addEventListener('DOMContentLoaded', () => {
